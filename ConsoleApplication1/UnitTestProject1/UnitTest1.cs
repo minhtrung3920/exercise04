@@ -39,7 +39,7 @@ namespace UnitTestProject1
         {
             int result1 = Program.Square(2);
             Assert.AreEqual(4, result1);
-            int result2 = Program.Cube(3);
+            int result2 = Program.Square(3);
             Assert.AreEqual(9, result2);
         }
         [TestMethod]
@@ -63,27 +63,27 @@ namespace UnitTestProject1
         [TestMethod]
         public void testCeil()
         {
-            int kq1 = Program.mathceil((float)4.2);
+            int kq1 = Program.Ceil((float)4.2);
             Assert.AreEqual(5, kq1);
-            int kq2 = Program.mathceil(0);
+            int kq2 = Program.Ceil(0);
             Assert.AreEqual(0, kq2);
-            int kq3 = Program.mathceil(5);
+            int kq3 = Program.Ceil(5);
             Assert.AreEqual(5, kq3);
-            int kq4 = Program.mathceil((float)-2.3);
+            int kq4 = Program.Ceil((float)-2.3);
             Assert.AreEqual(-2, kq4);
-            int kq5 = Program.mathceil((float)0.1);
+            int kq5 = Program.Ceil((float)0.1);
             Assert.AreEqual(1, kq5);
         }
         [TestMethod]
         public void testFloor()
         {
-            int kq1 = Program.mathFloor(4.4);
+            int kq1 = Program.Floor(4.4);
             Assert.AreEqual(4, kq1);
-            int kq2 = Program.mathFloor(-2.3);
+            int kq2 = Program.Floor(-2.3);
             Assert.AreEqual(-3, kq2);
-            int kq3 = Program.mathFloor(0);
+            int kq3 = Program.Floor(0);
             Assert.AreEqual(0, kq3);
-            int kq4 = Program.mathFloor(0.1);
+            int kq4 = Program.Floor(0.1);
             Assert.AreEqual(0, kq4);
         }
         [TestMethod]

@@ -23,8 +23,8 @@ namespace ConsoleApplication1
             Console.WriteLine("{0} is abs of {1}", abs(number3), number3);
             Console.WriteLine("The number u want it to be ceil and floor");
             double number4 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("{0} is ceil {1} ", mathceil(number4), number4);
-            Console.WriteLine("{0} is floor {1} ", mathFloor(number4), number4);
+            Console.WriteLine("{0} is ceil {1} ", Ceil(number4), number4);
+            Console.WriteLine("{0} is floor {1} ", Floor(number4), number4);
             Console.WriteLine("{0} is lucky number ", Random(number));
             Console.WriteLine("{0} is random2 ", random2());
          
@@ -127,31 +127,59 @@ namespace ConsoleApplication1
              }
              return number3 * -1;
          }
-         public static int mathceil(double number3)
+         public static int Ceil(double number4)
          {
-             if (number3 > 0 && number3 % 1 != 0)
+             //so nguyen
+             if (number4 > 0 && number4 % 1 != 0)
              {
-                 return (int)number3 + 1;
+                 return (int)number4 + 1;
              }
-             else if (number3 < 0 && number3 % 1 != 0)
+             else if (number4 < 0 && number4 % 1 != 0)
              {
-                 return (int)number3;
+                 return (int)number4;
              }
              else
              {
-                 return (int)number3;
+                 return (int)number4;
              }
 
          }
-         public static int mathFloor(double number3)
+         public static int Floor(double number4)
          {
-             if (number3 < 0)
+             if (number4 < 0)
              {
-                 return (int)number3 + -1;
+                 return (int)number4 + -1;
              }
 
-             return (int)number3;
+             return (int)number4;
          }
+        //input: float x
+        //output: a int the largest integral value that is not greater than x
+        //idea: first chang float x into interger
+        //if x is a negative --1
+        //if number == k then unchange
+
+         //public static int Floor(float number)
+         //{
+            //if (number < 0 && number % 1 != 0)
+            //{
+            //    return(int) number;
+            //}
+            //else if (number > 0 && number % 1 != 0)
+            //{
+            //    return (int)number;
+            //}
+            //return (int)number;
+            ///////////////////////// code2:
+            ////////////////////////int a = (int)number;
+            ////////////////////////if (number < 0)
+            ////////////////////////{
+            ////////////////////////    if (a != number)
+            ////////////////////////    {
+            ////////////////////////        a = a - 1;
+            ////////////////////////    }
+            ////////////////////////}
+            ////////////////////////return a;
          public static int Random(int number)
          {
              Random rd = new Random();
