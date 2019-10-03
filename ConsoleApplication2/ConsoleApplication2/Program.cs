@@ -12,18 +12,27 @@ namespace ConsoleApplication2
         {
             ////int Length = Convert.ToInt32(Console.ReadLine());
             ///Length
-            int[] array = new int[10];
-            Console.WriteLine("nhap phan tu mang: ");
-            InputInt(array);
-            Console.WriteLine("check number 5: " );
-            check(array);
-            Console.WriteLine("check number 5 or 6: ");
-            check2(array);
-            Console.WriteLine("check number 5 and 6: ");
-            check3(array);
-            Console.WriteLine("have {0} number 5. ", count(array));
-            Console.WriteLine("have {0} number 5&6.", count2(array));
-            Console.WriteLine("{0} is sum of all number.", sum(array));
+            ////int[] array = new int[10];
+            ////Console.WriteLine("nhap phan tu mang: ");
+            ////InputInt(array);
+            ////Console.WriteLine("check number 5: " );
+            ////check(array);
+            ////Console.WriteLine("check number 5 or 6: ");
+            ////check2(array);
+            ////Console.WriteLine("check number 5 and 6: ");
+            ////check3(array);
+            ////Console.WriteLine("have {0} number 5. ", count(array));
+            ////Console.WriteLine("have {0} number 5&6.", count2(array));
+            ////Console.WriteLine("{0} is sum of all number.", sum(array));
+
+            //draw
+            int number = Convert.ToInt32(Console.ReadLine());
+            Vertical(4, 'i'); Console.WriteLine();
+            rePymid2(number, 'v');
+            rePymid(number, 'v');                                      
+
+            Draw
+            
         }
         public static void InputInt(int[] arr)
         {
@@ -44,7 +53,7 @@ namespace ConsoleApplication2
                     return true;
                 }
             }
-                return false;
+            return false;
         }
         public static void check(int[] array)
         {
@@ -92,6 +101,7 @@ namespace ConsoleApplication2
                 }
             }
             return false;
+          
         }
         public static void check3(int[] array)
         {
@@ -136,6 +146,58 @@ namespace ConsoleApplication2
                 sum += array[i];
             }
             return sum;
+        }
+        static void Vertical(int number, char a)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                Console.WriteLine(a);
+            }
+        }
+        static void Horizone(int number, char a)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write(a);
+            }
+        }
+        static void rePymid(int number, char a)
+        {
+           
+            Vertical(number * 2 - 1, a);
+            Console.WriteLine();
+            
+            int space = number + number / 2 + 1;
+            for (int i = number - 1; i > 1; i--)
+            {
+                Horizone(number - i,' ');
+                Horizone(1, a);
+                space = space - 2;
+                Horizone(space,' ');
+                Horizone(1, a);
+                Console.WriteLine();
+            }
+            Horizone(number - 1,' ');
+            Horizone(1, a);
+            Console.WriteLine();
+        }
+        static void rePymid2(int number, char a)
+        {
+            Horizone(number * 2 - 1, a);
+            Console.WriteLine();
+            int space = number + number / 2 - 1;
+            for (int i = number - 1; i < 1; i++)
+            {
+                Horizone(number - i,' ');
+                Horizone(1, a);
+                space = space - 2;
+                Horizone(space,' ');
+                Horizone(1,a);
+                Console.WriteLine();
+            }
+            Horizone(number - 1, ' ');
+            Horizone(1, a);
+            Console.WriteLine();
         }
     }
 }

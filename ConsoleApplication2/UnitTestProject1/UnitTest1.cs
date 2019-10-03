@@ -52,6 +52,22 @@ namespace UnitTestProject1
             Assert.AreEqual(1, result);
         }
         [TestMethod]
+        public void TestCount5or6()
+        {
+            int[] arr = new int[] { 1, 2, 5, 6, 4, 7 };
+            int result = Program.count2(arr);
+            Assert.AreEqual(true, result);
+
+            int[] arr2 = new int[] { 1, 2, 4, 5, 7 };
+            int result2 = Program.count2(arr2);
+            Assert.AreEqual(true, result2);
+
+            int[] arr3 = new int[] { 1, 2, 6, 4, 7 };
+            int result3 = Program.count2(arr3);
+            Assert.AreEqual(true, result3);
+
+        }
+        [TestMethod]
         public void testsum()
         {
             int[] arr = new int[] { 1, 2, 3, 4, 5, 6 };
